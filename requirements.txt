@@ -1,0 +1,16 @@
+fastapi[all]
+nest-asyncio
+pyngrok
+uvicorn
+python-socketio[asyncio]
+langchain
+langchain_community
+google-generativeai
+langchain-google-genai
+faiss-cpu
+pymupdf
+python-dotenv
+langchain_huggingface
+pytesseract 
+pdf2image
+sentence-transformers
