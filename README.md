@@ -142,6 +142,8 @@ A suitable tagline for the story could be: "A tale of unfulfilled love and the a
 
 # evaluation metric
 
+as the evaluation metric i have used manual fact checking and also llm as a judge method. First i provided the pdf to strong llm model like "chatgpt" to help me find top 50 facts about the pdf or story... i then asked the llm to provide questions related to the facts , where the fact will give the direct answers.... i asked these questions to system and check manually about its performance... then as a metric of complex accuracy evaluation, i again asked the LLM to generate another 100 multi hop complex questions regarding the previously found top 50 facts from the story.... and also asked it to generate the correct answers for those questions according to it..... finally i asked these same multi hop questions to our system, and stored the generated answers , alongwith the retrieved chunked documents which were used to generated the answer from my system.... finally i used the large LLM "chatgpt" again to rate our system's answer Groundedness quality and to rate the context documents in terms of "Relevance"
+
 # answers to questions
 
 Question: What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?
