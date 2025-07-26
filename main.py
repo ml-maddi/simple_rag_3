@@ -30,7 +30,7 @@ if not GOOGLE_API_KEY:
 PDF_FILE_PATH = "HSC26_Bangla_1st_paper.pdf"
 VECTOR_DB_PATH = "faiss_index_bangla" # MODIFIED: Path for FAISS index
 EMBEDDING_MODEL_NAME = "Qwen/Qwen3-Embedding-0.6B"
-LLM_MODEL_NAME = "gemini-1.5-flash"
+LLM_MODEL_NAME = "gemini-2.5-flash"
 
 # MODIFIED: Using the dynamic prompt template from the notebook
 BASE_PROMPT_TEMPLATE = """You are a helpful AI assistant for answering questions about a given document.
