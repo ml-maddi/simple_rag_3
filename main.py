@@ -23,7 +23,7 @@ import unicodedata
 load_dotenv()
 
 # Load Google API Key from environment variables
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "AIzaSyDVz2Cb2XxdKkUuOGV7YBzjdQHSOzJRrJ4") # Added default for convenience
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY") # Added default for convenience
 if not GOOGLE_API_KEY:
     raise ValueError("Google API Key not found. Please set it as an environment variable.")
 
