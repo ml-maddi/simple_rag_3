@@ -78,21 +78,26 @@ Click OK on all dialogs to save
 
 llm = gemini-2.5-flash<br>
 embedding_model = Qwen/Qwen3-Embedding-0.6B<br>
-vectorstore = chroma<br>
+vectorstore = faiss-cpu<br>
 
 # Used libraries
 
+fastapi[all]<br>
+nest-asyncio<br>
+pyngrok<br>
+uvicorn<br>
+python-socketio[asyncio]<br>
 langchain<br>
 langchain_community<br>
 google-generativeai<br>
 langchain-google-genai<br>
-sentence-transformers<br>
-chromadb<br>
+faiss-cpu<br>
 pymupdf<br>
-fastapi<br>
-uvicorn<br>
 python-dotenv<br>
 langchain_huggingface<br>
+pytesseract <br>
+pdf2image<br>
+sentence-transformers<br>
 
 # sample queries,outputs
 
