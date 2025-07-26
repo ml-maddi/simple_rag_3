@@ -48,6 +48,10 @@ Click OK on all dialogs to save
 
 🔹 3. Restart Your Terminal or VSCode`
 
+## collect gemini api key
+
+`go to this url https://aistudio.google.com/prompts/new_chat and create an api key and place it in ".env" file `
+
 ## run a web app
 
 `uvicorn main:app --reload`
