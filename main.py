@@ -171,7 +171,7 @@ def initialize_llm_and_chain(vector_store):
     # MODIFIED: Using MMR for retrieval to get more diverse results
     retriever = vector_store.as_retriever(
         search_type="mmr",
-        search_kwargs={'k': 20, 'lambda_mult': 0.7}
+        search_kwargs={'k': 10, 'lambda_mult': 0.7}
     )
 
     # Create a default prompt. It will be updated for each request in the /chat endpoint.
