@@ -132,6 +132,7 @@ def load_and_embed_pdf():
         doc.page_content = doc.page_content.replace('\n', ' ').strip()
 
     from langchain.text_splitter import RecursiveCharacterTextSplitter
+    from langchain_community.vectorstores.utils import DistanceStrategy
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
@@ -141,7 +142,8 @@ def load_and_embed_pdf():
     chunks = text_splitter.split_documents(documents)
 
     print(f"Creating FAISS vector embeddings for {len(chunks)} chunks...")
-    vector_store = FAISS.from_documents(documents=chunks, embedding=hf)
+    vector_store = FAISS.from_documents(documents=chunks, embedding=hf,    distance_strategy=DistanceStrategy.COSINE
+)
     vector_store.save_local(VECTOR_DB_PATH)
     print(f"FAISS index created and saved successfully at '{VECTOR_DB_PATH}'!")
     return vector_store
@@ -170,8 +172,8 @@ def initialize_llm_and_chain(vector_store):
 
     # MODIFIED: Using MMR for retrieval to get more diverse results
     retriever = vector_store.as_retriever(
-        search_type="mmr",
-        search_kwargs={'k': 10, 'lambda_mult': 0.7}
+        search_type="similarity",
+        search_kwargs={'k': 50}
     )
 
     # Create a default prompt. It will be updated for each request in the /chat endpoint.
